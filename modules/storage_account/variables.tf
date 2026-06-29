@@ -1,10 +1,10 @@
 variable "storage_account_name" {
-  description = "Storage Account Name"
+  description = "Azure Storage Account Name"
   type        = string
 }
 
 variable "resource_group_name" {
-  description = "Resource Group Name"
+  description = "Azure Resource Group Name"
   type        = string
 }
 
