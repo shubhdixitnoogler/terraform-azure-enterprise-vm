@@ -34,3 +34,19 @@ module "subnet" {
   vm_subnet_prefixes      = var.vm_subnet_prefixes
   bastion_subnet_prefixes = var.bastion_subnet_prefixes
 }
+
+module "network_security_group" {
+
+  source = "./modules/network_security_group"
+
+  network_security_group_name = var.network_security_group_name
+
+  resource_group_name = module.resource_group.resource_group_name
+
+  location = module.resource_group.location
+
+  subnet_id = module.subnet.vm_subnet_id
+
+  tags = var.tags
+
+}

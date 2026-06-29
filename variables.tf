@@ -37,3 +37,8 @@ variable "vm_subnet_prefixes" {
 variable "bastion_subnet_prefixes" {
   type = list(string)
 }
+
+variable "network_security_group_name" {
+  description = "Name of the NSG"
+  type        = string
+}
