@@ -42,3 +42,8 @@ variable "network_security_group_name" {
   description = "Name of the NSG"
   type        = string
 }
+
+variable "storage_account_name" {
+  description = "Storage Account Name"
+  type        = string
+}

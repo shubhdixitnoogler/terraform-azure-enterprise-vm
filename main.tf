@@ -50,3 +50,16 @@ module "network_security_group" {
   tags = var.tags
 
 }
+
+module "storage_account" {
+
+  source = "./modules/storage_account"
+
+  storage_account_name = var.storage_account_name
+
+  resource_group_name = module.resource_group.resource_group_name
+
+  location = module.resource_group.location
+
+  tags = var.tags
+}
