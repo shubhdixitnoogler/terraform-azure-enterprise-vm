@@ -47,3 +47,13 @@ variable "storage_account_name" {
   description = "Storage Account Name"
   type        = string
 }
+
+variable "bastion_public_ip_name" {
+  description = "Azure Bastion Public IP Name"
+  type        = string
+}
+
+variable "bastion_name" {
+  description = "Azure Bastion Host Name"
+  type        = string
+}

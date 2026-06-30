@@ -47,3 +47,33 @@ module "storage_account" {
     module.resource_group
   ]
 }
+
+module "public_ip" {
+
+  source = "./modules/public_ip"
+
+  bastion_public_ip_name = var.bastion_public_ip_name
+
+  resource_group_name = module.resource_group.resource_group_name
+
+  location = module.resource_group.location
+
+  tags = var.tags
+}
+
+module "bastion" {
+
+  source = "./modules/bastion"
+
+  bastion_name = var.bastion_name
+
+  resource_group_name = module.resource_group.resource_group_name
+
+  location = module.resource_group.location
+
+  subnet_id = module.subnet.bastion_subnet_id
+
+  public_ip_id = module.public_ip.public_ip_id
+
+  tags = var.tags
+}
