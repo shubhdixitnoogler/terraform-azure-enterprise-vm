@@ -21,3 +21,11 @@ output "bastion_name" {
 output "bastion_id" {
   value = module.bastion.bastion_id
 }
+
+output "network_interface_id" {
+  value = module.network_interface.network_interface_id
+}
+
+output "private_ip_address" {
+  value = module.network_interface.private_ip_address
+}

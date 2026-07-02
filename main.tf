@@ -77,3 +77,18 @@ module "bastion" {
 
   tags = var.tags
 }
+
+module "network_interface" {
+
+  source = "./modules/network_interface"
+
+  network_interface_name = var.network_interface_name
+
+  resource_group_name = module.resource_group.resource_group_name
+
+  location = module.resource_group.location
+
+  subnet_id = module.subnet.vm_subnet_id
+
+  tags = var.tags
+}

@@ -57,3 +57,8 @@ variable "bastion_name" {
   description = "Azure Bastion Host Name"
   type        = string
 }
+
+variable "network_interface_name" {
+  description = "Network Interface Name"
+  type        = string
+}

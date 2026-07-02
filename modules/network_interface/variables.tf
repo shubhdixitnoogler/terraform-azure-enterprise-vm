@@ -1,5 +1,5 @@
-variable "bastion_public_ip_name" {
-  description = "Azure Bastion Public IP Name"
+variable "network_interface_name" {
+  description = "Network Interface Name"
   type        = string
 }
 
@@ -13,16 +13,9 @@ variable "location" {
   type        = string
 }
 
-variable "allocation_method" {
-  description = "Public IP Allocation Method"
+variable "subnet_id" {
+  description = "VM Subnet ID"
   type        = string
-  default     = "Static"
-}
-
-variable "sku" {
-  description = "Public IP SKU"
-  type        = string
-  default     = "Standard"
 }
 
 variable "tags" {
