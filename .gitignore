@@ -29,3 +29,6 @@ terraform.rc
 # OS
 .DS_Store
 Thumbs.db
+
+#password
+password.sh

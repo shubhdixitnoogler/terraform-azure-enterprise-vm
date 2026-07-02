@@ -29,3 +29,15 @@ output "network_interface_id" {
 output "private_ip_address" {
   value = module.network_interface.private_ip_address
 }
+
+output "virtual_machine_id" {
+  value = module.virtual_machine.virtual_machine_id
+}
+
+output "virtual_machine_name" {
+  value = module.virtual_machine.virtual_machine_name
+}
+
+output "virtual_machine_private_ip" {
+  value = module.virtual_machine.private_ip_address
+}

@@ -92,3 +92,35 @@ module "network_interface" {
 
   tags = var.tags
 }
+
+module "virtual_machine" {
+
+  source = "./modules/virtual_machine"
+
+  vm_name = var.vm_name
+
+  resource_group_name = module.resource_group.resource_group_name
+
+  location = module.resource_group.location
+
+  vm_size = var.vm_size
+
+  admin_username = var.admin_username
+
+  admin_password = var.admin_password
+
+  network_interface_id = module.network_interface.network_interface_id
+
+  storage_account_uri = module.storage_account.primary_blob_endpoint
+
+  image_publisher = var.image_publisher
+  image_offer     = var.image_offer
+  image_sku       = var.image_sku
+  image_version   = var.image_version
+
+  tags = var.tags
+  depends_on = [
+    module.network_interface,
+    module.storage_account
+  ]
+}
